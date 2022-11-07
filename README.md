@@ -2,22 +2,34 @@
 API to return book details
 
 ## Endpoints:
-1. *localhost:3032/books?location=<location_code>*
+1. GET - *localhost:3032/books?location=<location_code>*
    - Default will return location=US-NC
    - Locations:
       - US-NC
       - IN
       - IE
-2. *localhost:3032/team*
+2. GET - *localhost:3032/team*
+3. POST - *localhost:3032/books*
+
+## Sample request payload - /books
+```
+{
+  "Title": "title1",
+  "Author": "author1",
+  "price": "12.34",
+  "ISBN": "1234567890",
+  "publisher": "publisher1"
+}
+```
 
 ## Sample response object - /books:
 ```
 {
-  "Title": "Lord of the Rings",
-  "Author": "J.R.R Tolkien",
-  "price": "28.07",
-  "ISBN": "9780261102385",
-  "publisher": "HarperCollins"
+  "Title": "title1",
+  "Author": "author1",
+  "price": "12.34",
+  "ISBN": "1234567890",
+  "publisher": "publisher1"
 }
 ```
 
