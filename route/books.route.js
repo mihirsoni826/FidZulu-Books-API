@@ -8,10 +8,10 @@ const {
 } = require("../controller/books.controller");
 
 router
-    .route("/")
-    // .get(getAllBooks)
+    .route("/books")
+    .get(getAllBooks)
 
-    router
+router
     .route("/team")
     // .get(getTeam)
 
