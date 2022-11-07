@@ -6,7 +6,7 @@ exports.getAllBooks = async (req, res) => {
     try {
         console.log(req.query);
         let tax = 1;
-        let conv = 1;
+        let conv = 1.08;
         
         let booksRaw = fs.readFileSync(path.resolve("../FidZulu-Books-API/assets/books.json").replace(/\\/g, '/'));
         let booksJSON = JSON.parse(booksRaw);
