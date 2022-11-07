@@ -13,6 +13,6 @@ router
 
 router
     .route("/team")
-    // .get(getTeam)
+    .get(getTeam)
 
 module.exports = router;

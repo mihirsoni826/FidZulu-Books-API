@@ -38,3 +38,17 @@ exports.getAllBooks = async (req, res) => {
         });
     }
 };
+
+exports.getTeam = (req, res) => {
+    try {
+        let teamRaw = fs.readFileSync(path.resolve("../FidZulu-Books-API/assets/team.json").replace(/\\/g, '/'));
+        let teamJson = JSON.parse(teamRaw);
+        return res.status(200).json(teamJson)
+    }
+    catch(error) {
+        res.status(500).json({
+            error: true,
+            message: error.message,
+        });
+    }
+}
