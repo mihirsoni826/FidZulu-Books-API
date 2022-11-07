@@ -2,9 +2,9 @@
 API to return book details
 
 ## Endpoints:
-1. localhost:3032/books?location=<location_code>
+1. *localhost:3032/books?location=<location_code>*
    - Default will return location=US-NC
-2. localhost:3032/team
+2. *localhost:3032/team*
 
 ## Sample response object - /books:
 ```
