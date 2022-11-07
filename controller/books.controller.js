@@ -5,7 +5,7 @@ exports.getAllBooks = async (req, res) => {
 
     try {
         console.log(req.query);
-        let tax = 1;
+        let tax = 1.08;
         let conv = 1;
         
         let booksRaw = fs.readFileSync(path.resolve("../FidZulu-Books-API/assets/books.json").replace(/\\/g, '/'));
@@ -49,6 +49,31 @@ exports.getTeam = (req, res) => {
         res.status(500).json({
             error: true,
             message: error.message,
+        });
+    }
+};
+
+exports.insertBook = (req, res) => {
+    try {
+        let payload = req.body;
+
+        let booksRaw = fs.readFileSync(path.resolve("../FidZulu-Books-API/assets/books.json").replace(/\\/g, '/'));
+        let booksJson = JSON.parse(booksRaw);
+
+        booksJson.push(payload);
+        console.log(booksJson);
+        fs.writeFileSync(path.resolve("../FidZulu-Books-API/assets/books.json").replace(/\\/g, '/'), JSON.stringify(booksJson));
+
+        res.status(201).json({
+            error: false,
+            message: "record created successully",
+            data: payload,
+        });
+    }
+    catch(error) {
+        res.status(500).json({
+            error: true,
+            message: error.message
         });
     }
 }
