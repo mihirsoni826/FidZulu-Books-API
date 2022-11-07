@@ -9,7 +9,7 @@ const {
 
 router
     .route("/")
-    // .get(getAllBooks)
+    .get(getAllBooks)
 
     router
     .route("/team")

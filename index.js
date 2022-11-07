@@ -27,3 +27,7 @@ process.on('unhandledRejection', (err, promise) => {
     console.log(`Error: ${ err.message }`)
     server.close(()=> process.exit(1))
 })
+
+app.get('/', function (req, res) {
+  console.log("received /")
+});
