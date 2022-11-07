@@ -1,14 +1,12 @@
 // import
 const express = require("express");
-const bodyParser = require("body-parser");
-const colors = require("colors");
-
+// const bodyParser = require("body-parser");
 
 // express app
 const app = express();
 
 // middleware
-app.use(bodyParser.json());
+// app.use(bodyParser.json());
 
 // import routes
 const bookRoute = require('./route/books.route');
@@ -20,12 +18,12 @@ app.use('/api/v1/books', bookRoute)
 const PORT = 3032;
 app.listen(PORT, () => {
   console.log(
-    `server is running on port 3032`.yellow.bold
+    `Books API is running on port ${PORT}`
   );
 });
 
 // handle unhandled promises rejection
 process.on('unhandledRejection', (err, promise) => {
-    console.log(`Error: ${ err.message }`.red)
+    console.log(`Error: ${ err.message }`)
     server.close(()=> process.exit(1))
 })
