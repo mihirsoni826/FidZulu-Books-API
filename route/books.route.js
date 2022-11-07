@@ -5,13 +5,14 @@ const {
   getAllBooks,
   getTeam,
 
-} = require("../controllers/book.controller");
+} = require("../controller/books.controller");
 
 router
     .route("/")
-    .get(getAllBooks)
-router
+    // .get(getAllBooks)
+
+    router
     .route("/team")
-    .get(getTeam)
+    // .get(getTeam)
 
 module.exports = router;
